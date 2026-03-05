@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>City Center Shopping Mall</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+    .hero {
+      background: url("mall-hero.jpg") center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    .hero button {
+      padding: 10px 20px;
+      border: none;
+      background: #ff6b35;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .section {
+      padding: 40px 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      margin-top: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .section h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 22px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .store-card {
+      background: #fafafa;
+      border-radius: 4px;
+      padding: 15px;
+      border: 1px solid #eee;
+    }
+    .store-card h4 {
+      margin: 0 0 8px;
+    }
+    .store-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .info-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #777;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>City Center Mall</h1>
+    <nav>
+      <a href="#stores">Stores</a>
+      <a href="#dining">Dining</a>
+      <a href="#cinema">Cinema</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to City Center Mall</h2>
+    <p>Your one-stop destination for shopping, dining, and entertainment in the heart of the city.</p>
+    <button onclick="document.getElementById('stores').scrollIntoView({behavior:'smooth'})">
+      Explore Stores
+    </button>
+  </section>
+
+  <section id="stores" class="section">
+    <h3>Featured Stores</h3>
+    <div class="stores-grid">
+      <div class="store-card">
+        <h4>Fashion Hub</h4>
+        <p>Latest trends in men’s and women’s fashion.</p>
+      </div>
+      <div class="store-card">
+        <h4>Tech World</h4>
+        <p>Electronics, gadgets, and accessories from top brands.</p>
+      </div>
+      <div class="store-card">
+        <h4>Kids Planet</h4>
+        <p>Toys, games, and clothing for children of all ages.</p>
+      </div>
+      <div class="store-card">
+        <h4>Home Style</h4>
+        <p>Furniture, décor, and home essentials.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dining" class="section">
+    <h3>Dining & Cafés</h3>
+    <p>From quick bites to fine dining, enjoy a variety of cuisines:</p>
+    <ul class="info-list">
+      <li><strong>Food Court:</strong> Fast food, international chains, and local favorites.</li>
+      <li><strong>Rooftop Restaurants:</strong> Relax with a view and gourmet dishes.</li>
+      <li><strong>Cafés:</strong> Coffee, desserts, and light snacks.</li>
+    </ul>
+  </section>
+
+  <section id="cinema" class="section">
+    <h3>Cinema & Entertainment</h3>
+    <p>Catch the latest movies in our state-of-the-art multiplex cinema with:</p>
+    <ul class="info-list">
+      <li>Comfortable recliner seating</li>
+      <li>4K projection and surround sound</li>
+      <li>Online ticket booking and kiosks</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contact & Location</h3>
+    <ul class="info-list">
+      <li><strong>Address:</strong> City Center Mall, Main Street, Your City</li>
+      <li><strong>Phone:</strong> +971-2-123-4567</li>
+      <li><strong>Email:</strong> info@citycentermall.com</li>
+      <li><strong>Opening Hours:</strong> Daily, 10:00 AM – 11:00 PM</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2026 City Center Mall. All rights reserved.
+  </footer>
+
+</body>
+</html>
