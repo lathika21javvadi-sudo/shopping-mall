@@ -45,7 +45,7 @@ def offers():
 
 @app.route("/")
 def home():
-    return "Shopping Mall Backend is running!"
+    return "Lathika shopping Mall Backend is running!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
