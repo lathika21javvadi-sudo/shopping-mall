@@ -31,3 +31,32 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t shopping-mall .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker registry
+        run: |
+          echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Build and push image
+        run: |
+          docker build -t $DOCKER_USERNAME/shopping-mall:latest .
+          docker push $DOCKER_USERNAME/shopping-mall:latest
+
+      - name: Deploy to VPS
+        run: |
+          echo "$SSH_KEY" > key.pem
+          chmod 600 key.pem
+          ssh -o StrictHostKeyChecking=no -i key.pem $SSH_USER@$SSH_HOST "
+            docker pull $DOCKER_USERNAME/shopping-mall:latest &&
+            docker stop shopping-mall || true &&
+            docker rm shopping-mall || true &&
+            docker run -d --name shopping-mall -p 80:5000 $DOCKER_USERNAME/shopping-mall:latest
+          "
