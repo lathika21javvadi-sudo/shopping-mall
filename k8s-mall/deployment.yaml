@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mall-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mall-backend
+  template:
+    metadata:
+      labels:
+        app: mall-backend
+    spec:
+      containers:
+      - name: mall-backend
+        image: mall-backend:1.0
+        ports:
+        - containerPort: 5000

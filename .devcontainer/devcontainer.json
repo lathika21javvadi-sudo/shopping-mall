@@ -1,0 +1,6 @@
+{
+  "name": "Shopping Mall Dev Container",
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {}
+  }
+}
